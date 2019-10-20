@@ -18,9 +18,7 @@
             <button ng-click="push()">Add Item</button>
         </form>
         <ul>
-            <li ng-repeat="data in stores">
-                {{ data.name }}
-            </li>
+            <li ng-repeat="data in todos">{{ data.item }}<i class="fa fa-trash"></i></li>
         </ul>
     </div>
   </div>  

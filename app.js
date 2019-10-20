@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 let todoController = require('./controllers/todoController')
 
@@ -7,6 +8,9 @@ let app = express()
 
 //set up template engine
 app.set('view engine', 'ejs')
+
+// //CORS (cross origin requests) enabling 
+app.use(cors())
 
 //start todo controller
 todoController(app)
