@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>AngularJS Todo App View from Node.js</title>
-    <link href="public/css/style.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="public/font/fontawesome/web-fonts-with-css/css/fontawesome-all.css">
+    <title>Mean-Stack Todo App</title>
+    <link href="../public/css/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="../public/font/fontawesome/web-fonts-with-css/css/fontawesome-all.css">
     <!-- recommended because angular.module can only be compiled after the library has been loaded -->
     <script src="AngularJS/angular.js"></script> 
 </head>
@@ -18,25 +18,12 @@
             <button ng-click="push()">Add Item</button>
         </form>
         <ul>
-            <li ng-repeat="x in stores">
-                    {{ x.name }}
+            <li ng-repeat="data in stores">
+                {{ data.name }}
             </li>
         </ul>
     </div>
   </div>  
 </body>
-<script>
-    var todo = angular.module("todoApp", []);
-    
-    todo.controller("todoCtrl", ($scope) => {
-        $scope.stores=[
-            {name:"Samsung Gear VR"},
-            {name:"HP Envy Laptop"}
-        ];
-        $scope.itemname = '';
-        $scope.push = ()=>{
-            $scope.stores.push({name:$scope.itemname});
-        }
-    })
-</script>
+<script src="angularControllers.js"></script>
 </html>
