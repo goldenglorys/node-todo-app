@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS Todo App View from Node.js</title>
+    <link href="public/css/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="public/font/fontawesome/web-fonts-with-css/css/fontawesome-all.css">
+    <!-- recommended because angular.module can only be compiled after the library has been loaded -->
+    <script src="AngularJS/angular.js"></script> 
+</head>
+<body>
+  <div ng-app="todoApp" ng-controller="todoCtrl">
+    <div id="todo-table">
+            <!-- <input type="text" ng-model="model"/>
+            <p ng-bind="model"></p>
+            <b style="color:{{model}}">sndni</b>
+            <my-Directive></my-Directive> -->
+        <form>
+            <input type="text" id="itemName" placeholder="Add new item..." required/>
+            <button id="btn" type="submit">Add Item</button>
+        </form>
+        <ul>
+            <!-- <% for(var i=0; i<todos.length; i++) { %>
+                <li id="delete"><%= todos[i].item %><i class="fa fa-trash"></i></li>
+            <% } %> -->
+            <li ng-repeat="x in stores">
+                    {{ x.names + ', ' + x.prices }}
+            </li>
+        </ul>
+    </div>
+  </div>  
+</body>
+<script>
+    var todo = angular.module("todoApp", []);
+    // todo.directive("myDirective", () => {
+    //     return {
+    //         template : "<p>Made by an AngularJS directive/component!</p>"
+    //     };
+    // });
+    
+    todo.controller("todoCtrl", ($scope) => {
+        $scope.stores=[
+            {"names":"Samsung Gear VR","prices":200,"pic":"Images/sam vr.jpg"},
+            {"names":"Samsung Gear VR","prices":200,"pic":"Images/sam vr.jpg"},
+            {"names":"Samsung Gear VR","prices":200,"pic":"Images/sam vr.jpg"},
+            {"names":"HP Envy Laptop","prices":150,"pic":"Images/hp.jpg"},
+            {"names":"HP Envy Laptop","prices":150,"pic":"Images/hp.jpg"},
+            {"names":"HP Envy Laptop","prices":150,"pic":"Images/hp.jpg"},
+            
+            {"names":"Samsung Galaxy S8","prices":250,"pic":"Images/s8.jpg"},
+            {"names":"Samsung Galaxy S8","prices":250,"pic":"Images/s8.jpg"},
+            {"names":"Samsung Galaxy S8","prices":250,"pic":"Images/s8.jpg"},
+            {"names":"3D Printer","prices":199,"pic":"Images/2.jpg"},
+            {"names":"3D Printer","prices":199,"pic":"Images/2.jpg"},
+            {"names":"3D Printer","prices":199,"pic":"Images/2.jpg"},
+		];
+    })
+</script>
+</html>
