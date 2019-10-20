@@ -1,13 +1,13 @@
 body{
-    background: #0d1521;
+    background: #226b65;
     font-family: tahoma;
-    color: #989898
+    color: #fff
 }
 
 #todo-table{
     position: relative;
     width: 95%;
-    background: #090d13;
+    background: #b8d0d3;
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
@@ -23,18 +23,18 @@ body{
 input[type="text"]{
     width: 65%;
     padding: 20px;
-    background: #181c22;
+    background: #226b65;
     border: 0;
     float: left;
     font-size: 20px;
-    color: #998899;
+    color: #fff;
 }
 
 button{
     padding: 20px;
     width: 30%;
     float: left;
-    background: #23282e;
+    background: #648683;
     border: 0;
     box-sizing: border-box;
     color: #fff;

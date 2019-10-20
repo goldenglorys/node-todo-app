@@ -29,6 +29,13 @@ module.exports = (app)=>{
         })
     })
 
+    app.get('/api', (req, res)=>{
+        Todo.find({}, (err, data)=>{
+            if(err) throw err
+            res.json(data)
+        })
+    })
+
     app.post('/sendItem', urlencodedParser, (req, res)=>{
         //Get data from the view and add to mongoDB
         let itemContainer = Todo(req.body)
