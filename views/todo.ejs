@@ -15,9 +15,10 @@
             <button id="btn" type="submit">Add Item</button>
         </form>
         <ul>
-            <% for(var i=0; i<todos.length; i++) { %>
-                <li id="delete"><%= todos[i].item %><i class="fa fa-trash"></i></li>
-            <% } %>
+            <% for(x in todos){ %>
+                <li id="delete"><%= todos[x].item %><i class="fa fa-trash" onclick="del()"></i></li>
+                <input type="hidden" id="hide" value="<%= todos[x]._id %>"/>
+            <%}%>
         </ul>
     </div>
 </body>

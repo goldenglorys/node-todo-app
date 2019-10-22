@@ -37,23 +37,24 @@ module.exports = (app)=>{
     })
 
     app.post('/sendItem', urlencodedParser, (req, res)=>{
+        console.log(req.body)
         //Get data from the view and add to mongoDB
-        let itemContainer = Todo(req.body)
-            itemContainer.save().then(
-                item => {
-                    console.log("Saved to database with a unique ID of: " + item._id)
-                    console.log(item.item)
-                    res.render('todo', {todos: item})
-                    }
-                ).catch(
-                err => {
-                    console.log("Unable to save to database" + err)
-                }
-            )
+        // let itemContainer = Todo(req.body)
+        //     itemContainer.save().then(
+        //         item => {
+        //             console.log("Saved to database with a unique ID of: " + item._id)
+        //             console.log(item.item)
+        //             res.render('todo', {todos: item})
+        //             }
+        //         ).catch(
+        //         err => {
+        //             console.log("Unable to save to database" + err)
+        //         }
+        //     )
     })
 
-    // app.get('/todoz', (req, res)=>{
-    //     console.log(req._parsedOriginalUrl.query)
-    // })
+    app.delete('/todoDel', (req, res)=>{
+        console.log(req._parsedOriginalUrl.query)
+    })
 
 }
